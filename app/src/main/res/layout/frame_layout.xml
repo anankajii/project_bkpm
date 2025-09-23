@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1113"
+    android:backgroundTint="#10E6D3"
+    tools:context=".MainActivityCompose">
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        android:padding="16dp"
+        android:text="Frame Layout"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#02FBE6" />
+
+    <Button
+        android:layout_width="500px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:background="#0A5AD1"
+        android:backgroundTint="#0F2BC8"
+        android:text="Tombol"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+
+</FrameLayout>

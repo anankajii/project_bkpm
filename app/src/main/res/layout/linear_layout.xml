@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:paddingLeft="16dp"
+android:paddingRight="16dp"
+tools:context=".acara9.LinearActivity">
+
+    <TextView
+        android:layout_width="379dp"
+        android:layout_height="51dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="#9C27B0"
+        android:backgroundTint="#9B27AF"
+        android:text="     Linear Layout"
+        android:textColor="#FAF6F6"
+        android:textSize="24sp" />
+    <EditText
+        android:id="@+id/to"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:hint="to"/>
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:hint="Subject" />
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="Message" />
+    <Button
+        android:id="@+id/send"
+        android:layout_width="122dp"
+        android:layout_height="69dp"
+        android:layout_gravity="right"
+        android:backgroundTint="#9C27B0"
+        android:text="Send"
+        android:textColor="#EFE6E6"
+        tools:ignore="RtlHardcoded" />
+</LinearLayout>

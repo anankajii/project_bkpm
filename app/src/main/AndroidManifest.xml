@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tugasbkpm">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/icon_bkpm"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon_bkpm"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TugasBKPM">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY_HERE"/>
+        <activity
+            android:name=".MainActivityCompose"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".acara9.LinearActivity" android:exported="false" />
+        <activity android:name=".RelativeActivity" android:exported="false" />
+        <activity android:name=".ConstraintActivity" android:exported="false" />
+        <activity android:name=".FrameActivity" android:exported="false" />
+        <activity android:name=".TableActivity" android:exported="false" />
+        <activity android:name=".MaterialDesignActivity" android:exported="false" />
+        <activity android:name=".HorizontalScrollViewActivity" android:exported="false" />
+        <activity android:name=".ScrollViewActivity" android:exported="false" />
+        <activity android:name=".RecylerView" android:exported="false" />
+        <activity android:name=".Recyler15_16" android:exported="false" />
+        <activity android:name=".MahasiswaActivity" android:exported="false" />
+        <activity android:name=".acara17.FragmentMain" android:exported="false" />
+        <activity android:name=".acara20.IntentImplicit" android:exported="false" />
+        <activity android:name=".acara20.IntentExplicit" android:exported="false" />
+        <activity android:name=".acara20.IntentExplicitSecond" android:exported="false" />
+        <activity android:name=".acara25.SqlLiteFrist" android:exported="false" />
+        <activity android:name=".acara25.SqlLiteSecond" android:exported="false" />
+        <activity android:name=".acara28.DataHelperMain" android:exported="false" />
+        <activity android:name=".acara28.BuatBiodata" android:exported="false" />
+        <activity android:name=".acara28.LihatBiodata" android:exported="false" />
+        <activity android:name=".acara28.UpdateBiodata" android:exported="false" />
+        <activity android:name=".acara31.LoginActivity" android:exported="false" />
+        <activity android:name=".acara31.RegisterActivity" android:exported="false" />
+        <activity android:name=".acara31.PreferenceMain" android:exported="false" />
+    </application>
+
+</manifest>

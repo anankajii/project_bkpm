@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Tugas BKPM</string>
+    <string name="login">Login</string>
+    <string-array name="countries_arry">
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+        <item>Antigua and Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Aruba</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Bahrain</item>
+        <item>Bangladesh</item>
+        <item>Barbados</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+    </string-array>
+
+    <string-array name="nama_kota">
+        <item>Medan</item>
+        <item>Semarang</item>
+        <item>Palembang</item>
+        <item>Makassar</item>
+        <item>Batam</item>
+        <item>Pekanbaru</item>
+        <item>Bogor</item>
+        <item>Padang</item>
+        <item>Malang</item>
+        <item>Surabaya</item>
+        <item>Denpasar</item>
+        <item>Samarinda</item>
+        <item>Tangerang</item>
+        <item>Banjarmasin</item>
+        <item>Yogyakarta</item>
+        <item>Manado</item>
+        <item>Pontianak</item>
+        <item>Balikpapan</item>
+        <item>Jambi</item>
+        <item>Ambon</item>
+        <item>Surakarta</item>
+        <item>Cirebon</item>
+        <item>Kupang</item>
+        <item>Jayapura</item>
+    </string-array>
+    <string name="back">Back</string>
+    <string name="show_private_data">SHOW PRIVATE DATA</string>
+    <string name="show_public_data">SHOW PUBLIC DATA</string>
+    <string name="add_text">ADD TEXT</string>
+    <string name="click_to_view">CLICK TO VIEW</string>
+    <string name="save_as_private">SAVE AS PRIVATE</string>
+    <string name="save_as_public">SAVE AS PUBLIC</string>
+</resources>
