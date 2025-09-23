@@ -1,5 +1,4 @@
 package com.example.tugasbkpm.acara25;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -13,7 +12,6 @@ import com.example.tugasbkpm.R;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 public class SqlLiteFrist extends AppCompatActivity {
     EditText editText;
     private final int STORAGE_PERMISSION_CODE = 23;
@@ -30,15 +28,15 @@ public class SqlLiteFrist extends AppCompatActivity {
     }
     public void savePublic(View view) {
         String info = editText.getText().toString();
-        File folder = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS); // aman di folder private
+        File folder = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
         File myFile = new File(folder, "mydata1.txt");
         writeData(myFile, info);
         editText.setText("");
     }
     public void savePrivate(View view) {
         String info = editText.getText().toString();
-        File folder = getExternalFilesDir("Arsita"); // Folder Name
-        File myFile = new File(folder, "mydata2.txt"); // Filename
+        File folder = getExternalFilesDir("Arsita");
+        File myFile = new File(folder, "mydata2.txt");
         writeData(myFile, info);
         editText.setText("");
     }

@@ -4,23 +4,18 @@ import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.tugasbkpm.R;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 public class SqlLiteSecond extends AppCompatActivity {
     TextView showText;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acara25_sql_lite_second);
         showText = (TextView) findViewById(R.id.gettext);
     }
-
     public void back(View view) {
         finish();
     }
@@ -35,9 +30,8 @@ public class SqlLiteSecond extends AppCompatActivity {
         }
     }
     public void getPrivate(View view) {
-        File folder = getExternalFilesDir("Arsita"); // Folder Name
-        File myFile = new File(folder, "mydata2.txt"); // Filename
-
+        File folder = getExternalFilesDir("Arsita");
+        File myFile = new File(folder, "mydata2.txt");
         String text = getData(myFile);
         if (text != null) {
             showText.setText(text);

@@ -3,81 +3,28 @@
     android:id="@+id/activity_2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft=
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        "@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".acara20.IntentExplicitSecond">
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".acara21.IntentExplicitSecond">
+
     <TextView
-        android:text="TextView"
+        android:id="@+id/txtHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:textSize="20sp"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="12dp"
-        android:textStyle="bold"
-        android:id="@+id/txtHello" />
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <TextView
-        android:text="this_is_second_activity"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtHello"
         android:layout_alignStart="@+id/txtHello"
-        android:id="@+id/textView3" />
+        android:text="this_is_second_activity" />
 </RelativeLayout>

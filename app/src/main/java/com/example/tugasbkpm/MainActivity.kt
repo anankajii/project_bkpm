@@ -33,8 +33,8 @@ import androidx.compose.ui.unit.sp
 import com.example.tugasbkpm.acara9.LinearActivity
 import com.example.tugasbkpm.ui.theme.ProjectLinearLayoutTheme
 import com.example.tugasbkpm.acara17.FragmentMain
-import com.example.tugasbkpm.acara20.IntentExplicit
-import com.example.tugasbkpm.acara20.IntentImplicit
+import com.example.tugasbkpm.acara21.IntentExplicit
+import com.example.tugasbkpm.acara21.IntentImplicit
 import com.example.tugasbkpm.acara25.SqlLiteFrist
 import com.example.tugasbkpm.acara28.DataHelperMain
 import com.example.tugasbkpm.acara31.LoginActivity

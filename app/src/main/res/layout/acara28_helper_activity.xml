@@ -8,7 +8,6 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     tools:context=".acara28.DataHelperMain">
-
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
@@ -27,5 +26,4 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-
     </RelativeLayout>

@@ -22,7 +22,6 @@ public class DataHelperMain extends AppCompatActivity {
     DataHelper myDb;
     protected Cursor cursor;
     public static DataHelperMain ma;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +35,10 @@ public class DataHelperMain extends AppCompatActivity {
                 startActivity(inte);
             }
         });
-
         ma = this;
         myDb = new DataHelper(this);
         RefreshList();
     }
-
     public void RefreshList() {
         SQLiteDatabase db = myDb.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM biodata", null);

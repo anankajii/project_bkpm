@@ -15,12 +15,9 @@ public class PreferenceMain extends AppCompatActivity {
             finish();
             return;
         }
-
         setContentView(R.layout.acara31_main_activity);
-
         TextView nama = findViewById(R.id.tv_namaMain);
         nama.setText(Preference.getLoggedInUser(getBaseContext()));
-
         findViewById(R.id.button_logoutMain).setOnClickListener((v) -> {
             Preference.clearLoggedInUser(getBaseContext());
             startActivity(new Intent(getBaseContext(), LoginActivity.class));

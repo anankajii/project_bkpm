@@ -17,8 +17,8 @@
         android:theme="@style/Theme.TugasBKPM">
 
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY_HERE"/>
+            android:name="MAPBOX_ACCESS_TOKEN"
+            android:value="pk.eyJ1Ijoia2FqaWkiLCJhIjoiY21md2x3YTMwMDBuczJpc2Jyb2hqcmUxYiJ9.WWCp0of3AieiP_-NQPpaJA" />
         <activity
             android:name=".MainActivityCompose"
             android:exported="true"
@@ -41,9 +41,9 @@
         <activity android:name=".Recyler15_16" android:exported="false" />
         <activity android:name=".MahasiswaActivity" android:exported="false" />
         <activity android:name=".acara17.FragmentMain" android:exported="false" />
-        <activity android:name=".acara20.IntentImplicit" android:exported="false" />
-        <activity android:name=".acara20.IntentExplicit" android:exported="false" />
-        <activity android:name=".acara20.IntentExplicitSecond" android:exported="false" />
+        <activity android:name=".acara21.IntentImplicit" android:exported="false" />
+        <activity android:name=".acara21.IntentExplicit" android:exported="false" />
+        <activity android:name=".acara21.IntentExplicitSecond" android:exported="false" />
         <activity android:name=".acara25.SqlLiteFrist" android:exported="false" />
         <activity android:name=".acara25.SqlLiteSecond" android:exported="false" />
         <activity android:name=".acara28.DataHelperMain" android:exported="false" />

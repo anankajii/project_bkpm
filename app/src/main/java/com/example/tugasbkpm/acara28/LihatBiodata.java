@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.example.tugasbkpm.R;
 import androidx.appcompat.app.AppCompatActivity;
-
 public class LihatBiodata extends AppCompatActivity {
     protected Cursor cursor;
     DataHelper dbHelper;
