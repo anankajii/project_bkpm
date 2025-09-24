@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -17,8 +21,8 @@
         android:theme="@style/Theme.TugasBKPM">
 
         <meta-data
-            android:name="MAPBOX_ACCESS_TOKEN"
-            android:value="pk.eyJ1Ijoia2FqaWkiLCJhIjoiY21md2x3YTMwMDBuczJpc2Jyb2hqcmUxYiJ9.WWCp0of3AieiP_-NQPpaJA" />
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBVSJ_ZWzKkboUKGphF-VNdfAF1JgujeQQ" />
         <activity
             android:name=".MainActivityCompose"
             android:exported="true"
@@ -53,6 +57,11 @@
         <activity android:name=".acara31.LoginActivity" android:exported="false" />
         <activity android:name=".acara31.RegisterActivity" android:exported="false" />
         <activity android:name=".acara31.PreferenceMain" android:exported="false" />
+        <activity android:name=".acara33.Map" android:exported="false" />
+        <activity android:name=".acara34.Maps" android:exported="false" />
+        <receiver android:name=".acara34.ProximityReciver"/>
+
+
     </application>
 
 </manifest>

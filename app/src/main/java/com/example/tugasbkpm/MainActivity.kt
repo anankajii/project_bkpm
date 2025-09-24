@@ -38,6 +38,8 @@ import com.example.tugasbkpm.acara21.IntentImplicit
 import com.example.tugasbkpm.acara25.SqlLiteFrist
 import com.example.tugasbkpm.acara28.DataHelperMain
 import com.example.tugasbkpm.acara31.LoginActivity
+import com.example.tugasbkpm.acara33.Map
+import com.example.tugasbkpm.acara34.Maps
 
 class MainActivityCompose : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +77,10 @@ fun MainScreen() {
         "(Acara 23) Intent Explicit" to Intent(context, IntentExplicit::class.java),
         "(Acara 26) SQlLITE" to Intent(context, SqlLiteFrist::class.java),
         "(Acara 28) Manage SqlLite" to Intent(context, DataHelperMain::class.java),
-        "(Acara 31) Preference Shared" to Intent(context, LoginActivity::class.java)
+        "(Acara 31) Preference Shared" to Intent(context, LoginActivity::class.java),
+        "(Acara 33) Maps" to Intent(context, Map::class.java),
+        "(Acara 34) Maps" to Intent(context, Maps::class.java)
+
     )
 
     LazyVerticalGrid(

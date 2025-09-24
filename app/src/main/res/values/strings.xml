@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Tugas BKPM</string>
     <string name="login">Login</string>
+    <string name="GMAPS_ACCESS_TOKEN">AIzaSyBVSJ_ZWzKkboUKGphF-VNdfAF1JgujeQQ</string>
     <string-array name="countries_arry">
         <item>Afghanistan</item>
         <item>Albania</item>
