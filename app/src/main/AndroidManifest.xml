@@ -19,7 +19,6 @@
         android:roundIcon="@drawable/icon_bkpm"
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasBKPM">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBVSJ_ZWzKkboUKGphF-VNdfAF1JgujeQQ" />
@@ -60,6 +59,10 @@
         <activity android:name=".acara33.Map" android:exported="false" />
         <activity android:name=".acara34.Maps" android:exported="false" />
         <receiver android:name=".acara34.ProximityReciver"/>
+        <activity android:name=".acara35.MainActivity" android:exported="false"/>
+        <activity android:name=".acara35.AllSensor" android:exported="false" />
+        <activity android:name=".acara35.LightSensor" android:exported="false" />
+        <activity android:name=".acara35.ProximitySensor" android:exported="false" />
 
 
     </application>
