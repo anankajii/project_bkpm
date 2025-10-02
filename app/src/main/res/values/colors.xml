@@ -12,4 +12,5 @@
     <color name="green">#0F0</color>
     <color name="black">#000</color>
     <color name="white">#FFF</color>
+    <item  name="green_stroke" type="color">#00E676</item>
 </resources>

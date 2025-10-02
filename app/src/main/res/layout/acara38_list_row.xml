@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="@android:color/white">
+
+    <!-- Nama -->
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nama User"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/location"
+        app:layout_constraintHorizontal_bias="0" />
+
+    <!-- Jabatan/Deskripsi -->
+    <TextView
+        android:id="@+id/designation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Deskripsi / Jabatan"
+        android:textSize="14sp"
+        android:textColor="#555555"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Lokasi (dikanan atas) -->
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lokasi"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        app:layout_constraintTop_toTopOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

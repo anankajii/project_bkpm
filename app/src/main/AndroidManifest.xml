@@ -18,12 +18,14 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon_bkpm"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TugasBKPM">
+        android:theme="@style/Theme.TugasBKPM"
+        android:usesCleartextTraffic="true">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBVSJ_ZWzKkboUKGphF-VNdfAF1JgujeQQ" />
         <activity
             android:name=".MainActivityCompose"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -32,7 +34,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".acara9.LinearActivity" android:exported="false" />
+        <activity android:name=".acara9.LinearActivity" android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".RelativeActivity" android:exported="false" />
         <activity android:name=".ConstraintActivity" android:exported="false" />
         <activity android:name=".FrameActivity" android:exported="false" />
@@ -63,6 +66,23 @@
         <activity android:name=".acara35.AllSensor" android:exported="false" />
         <activity android:name=".acara35.LightSensor" android:exported="false" />
         <activity android:name=".acara35.ProximitySensor" android:exported="false" />
+        <activity android:name=".acara36.MainActivity" android:exported="false"/>
+        <activity android:name=".acara36.AllSensorActivity" android:exported="false" />
+        <activity android:name=".acara36.LightSensorActivity" android:exported="false" />
+        <activity android:name=".acara36.ProximitySensor" android:exported="false" />
+        <activity android:name=".acara37.JsonActivity" android:exported="false" />
+        <activity android:name=".acara37.JsonApi" android:exported="false" />
+        <activity android:name=".acara37.JsonParse" android:exported="false" />
+        <activity android:name=".acara37.MovieDb" android:exported="false" />
+        <activity android:name=".acara38.JsonApiActivity" android:exported="false" />
+        <activity android:name=".acara38.JsonParseActivity" android:exported="false" />
+        <activity android:name=".acara39.MovieDbActivity" android:exported="false" />
+        <activity android:name=".acara40.MainActivitiy" android:exported="false" />
+        <activity android:name=".acara41.LoginActivity" android:exported="false" />
+        <activity android:name=".acara41.AddUser" android:exported="false" />
+        <activity android:name=".acara41.MainActivity" android:exported="false" />
+
+
 
 
     </application>

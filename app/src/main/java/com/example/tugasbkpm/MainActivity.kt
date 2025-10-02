@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -14,7 +15,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
+import androidx.compose.material3.ripple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -27,6 +30,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -81,24 +85,79 @@ fun MainScreen() {
         "(Acara 31) Preference Shared" to Intent(context, LoginActivity::class.java),
         "(Acara 33) Maps" to Intent(context, Map::class.java),
         "(Acara 34) Maps" to Intent(context, Maps::class.java),
-        "(Acara 35) Sensor" to Intent(context, MainActivity::class.java)
-
+        "(Acara 35) Sensor" to Intent(context, MainActivity::class.java),
+        "(Acara 36) Sensor" to Intent(context, com.example.tugasbkpm.acara36.MainActivity::class.java),
+        "(Acara 37) Json" to Intent(context, com.example.tugasbkpm.acara37.JsonActivity::class.java),
+        "(Acara 38) Json" to Intent(context, com.example.tugasbkpm.acara38.JsonApiActivity::class.java),
+        "(Acara 38) Json Parse" to Intent(context, com.example.tugasbkpm.acara38.JsonParseActivity::class.java),
+        "(Acara 39) Movie" to Intent(context, com.example.tugasbkpm.acara39.MovieDbActivity::class.java),
+        "(Acara 40) JSON AND API" to Intent(context, com.example.tugasbkpm.acara40.MainActivitiy::class.java),
+        "(Acara 41) From Login R" to Intent(context, com.example.tugasbkpm.acara41.LoginActivity::class.java)
     )
 
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(3),
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(20.dp),
-        horizontalArrangement = Arrangement.spacedBy(20.dp),
-        verticalArrangement = Arrangement.spacedBy(20.dp)
-    ) {
-        itemsIndexed(menus) { index, item ->
-            MenuButton(
-                number = (index + 1).toString(),
-                label = item.first,
-                onClick = { context.startActivity(item.second) }
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        Color(0xFF1A237E),
+                        Color(0xFF283593),
+                        Color(0xFF3949AB),
+                        Color(0xFF5E35B1)
+                    )
+                )
             )
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            // Grid Menu
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(3),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f)
+                    .padding(horizontal = 16.dp)
+                    .padding(top = 24.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                itemsIndexed(menus) { index, item ->
+                    MenuButton(
+                        number = (index + 1).toString(),
+                        label = item.first,
+                        onClick = { context.startActivity(item.second) }
+                    )
+                }
+            }
+
+            // Watermark Footer
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color(0xFF0D47A1).copy(alpha = 0.9f))
+                    .padding(vertical = 12.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "© KAJI STD",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color(0xFF82B1FF),
+                        letterSpacing = 2.sp
+                    )
+                    Text(
+                        text = "Mobile Development 2025",
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = Color(0xFFBBDEFB)
+                    )
+                }
+            }
         }
     }
 }
@@ -107,7 +166,11 @@ fun MainScreen() {
 fun MenuButton(number: String, label: String, onClick: () -> Unit) {
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
-    val scale by animateFloatAsState(if (isPressed) 0.95f else 1f, label = "scale")
+    val scale by animateFloatAsState(
+        targetValue = if (isPressed) 0.92f else 1f,
+        animationSpec = tween(100),
+        label = "scale"
+    )
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -115,38 +178,45 @@ fun MenuButton(number: String, label: String, onClick: () -> Unit) {
     ) {
         Box(
             modifier = Modifier
-                .size(80.dp)
+                .size(75.dp)
                 .scale(scale)
-                .shadow(8.dp, CircleShape)
+                .shadow(
+                    elevation = 12.dp,
+                    shape = CircleShape,
+                    spotColor = Color(0xFF448AFF).copy(alpha = 0.6f)
+                )
                 .clip(CircleShape)
                 .background(
-                    brush = Brush.linearGradient(
-                        colors = listOf(Color(0xFFE3EF26), Color(0xFF076653), Color(color = 0xFF0C342C)),
-                        start = androidx.compose.ui.geometry.Offset(0f, 0f),
-                        end = androidx.compose.ui.geometry.Offset(80f, 80f)
+                    brush = Brush.radialGradient(
+                        colors = listOf(
+                            Color(0xFF448AFF),
+                            Color(0xFF2979FF),
+                            Color(0xFF1565C0)
+                        )
                     )
                 )
                 .clickable(
                     interactionSource = interactionSource,
-                    indication = ripple(color = Color.White)  // Migrasi: Ganti rememberRipple dengan ripple
+                    indication = ripple(color = Color.White)
                 ) { onClick() },
             contentAlignment = Alignment.Center
         ) {
             Text(
                 text = number,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.ExtraBold,
-                color = Color.White,
-                modifier = Modifier.padding(4.dp)
+                fontSize = 26.sp,
+                fontWeight = FontWeight.Black,
+                color = Color.White
             )
         }
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = label,
-            fontSize = 12.sp,
+            fontSize = 11.sp,
             fontWeight = FontWeight.Medium,
             maxLines = 2,
-            color = MaterialTheme.colorScheme.onBackground
+            color = Color.White,
+            textAlign = TextAlign.Center,
+            lineHeight = 13.sp
         )
     }
 }

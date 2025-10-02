@@ -27,46 +27,69 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         compose = true
     }
 }
 
 dependencies {
-
+    // AndroidX Core & Lifecycle
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.google.android.material:material:1.12.0")
-    implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.activity:activity-ktx:1.9.2")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.6")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")
+
+    // Jetpack Compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
     implementation("androidx.compose.material3:material3:1.3.2")
     implementation("androidx.compose.material:material-ripple:1.6.0")
     implementation("androidx.compose.animation:animation:1.6.0")
-    implementation("com.google.android.gms:play-services-maps:18.1.0")
+
+    // Networking
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    // Google Maps & Location
+    implementation("com.google.android.gms:play-services-maps:18.1.0") {
+        exclude(group = "com.android.support")
+    }
     implementation("com.google.android.gms:play-services-location:21.0.1")
-    implementation("com.mapbox.maps:android:11.7.0")
 
+    // Mapbox
+    implementation("com.mapbox.maps:android:11.7.0") {
+        exclude(group = "com.android.support", module = "support-compat")
+    }
 
+    // GraphView
+    implementation("com.jjoe64:graphview:4.2.2") {
+        exclude(group = "com.android.support")
+    }
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

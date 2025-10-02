@@ -23,7 +23,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Maps extends FragmentActivity implements OnMapReadyCallback {
-
     private GoogleMap mMap;
     private final int REQ_PERM = 1001;
     private LocationManager locationManager;
@@ -32,41 +31,29 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acara34_maps);
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this);
+        }
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        if (mapFragment != null) mapFragment.getMapAsync(this);
-
-        // inisialisasi LocationManager
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
     }
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        // hapus semua marker lama dan tambahkan marker baru di posisi klik
         mMap.setOnMapClickListener(latLng -> {
-            mMap.clear(); // hapus marker sebelumnya (opsional)
+            mMap.clear();
             mMap.addMarker(new MarkerOptions()
                     .position(latLng)
-                    .title("Marker di: " + latLng.latitude + ", " + latLng.longitude));
+                    .title("Monitoring: " + latLng.latitude + ", " + latLng.longitude));
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15));
+            addProximityAlert(latLng.latitude, latLng.longitude);
         });
-
-
-        // aktifkan zoom control
         mMap.getUiSettings().setZoomControlsEnabled(true);
-
-        // cek izin lokasi
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
-
-            // tambahkan proximity alert
-
-
-            // mulai monitoring perubahan lokasi
             startLocationUpdates();
         } else {
             ActivityCompat.requestPermissions(this,
@@ -93,10 +80,10 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
     // method untuk menambahkan proximity alert
     @SuppressWarnings("deprecation")
     private void addProximityAlert(double lat, double lon) {
-        float radius = 100f; // 100 meter
+        float radius = 100f; // radius 100 meter
         long expiration = -1; // tidak kadaluarsa
 
-        // Explicit intent ke BroadcastReceiver
+        // Intent eksplisit ke ProximityReciver
         Intent intent = new Intent(this, ProximityReciver.class);
 
         PendingIntent pending = PendingIntent.getBroadcast(
@@ -107,11 +94,11 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             locationManager.addProximityAlert(lat, lon, radius, expiration, pending);
+            Toast.makeText(this, "Proximity Alert ditambahkan di lokasi ini", Toast.LENGTH_SHORT).show();
         }
     }
 
-
-    // method untuk memonitor perubahan lokasi
+    // method untuk update lokasi user
     private void startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -119,7 +106,7 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
             LocationListener locationListener = new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
-                    String msg = "Location Changed: "
+                    String msg = "Lokasi sekarang: "
                             + location.getLatitude() + ", "
                             + location.getLongitude();
                     Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
@@ -138,8 +125,8 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
             // minta update lokasi dari GPS
             locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
-                    90000,   // minimal interval waktu (ms)
-                    100,      // minimal jarak (meter)
+                    60000,   // update tiap 60 detik
+                    50,      // atau pindah 50 meter
                     locationListener
             );
         }

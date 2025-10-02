@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <!-- Card Container dengan Elevation -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="#F8FFF9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="32dp">
+
+            <!-- Judul "Retrovolley" dengan efek neon -->
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retrovolley"
+                android:textSize="36sp"
+                android:textStyle="bold|italic"
+                android:textColor="#1B5E20"
+                android:fontFamily="cursive"
+                android:shadowColor="#4CAF50"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/txtSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back"
+                android:textSize="14sp"
+                android:textColor="#66BB6A"
+                android:letterSpacing="0.1"
+                app:layout_constraintTop_toBottomOf="@id/txtTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Email Input Container -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/green_stroke"
+                app:hintTextColor="#4CAF50"
+                app:layout_constraintTop_toBottomOf="@id/txtSubtitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtLogEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email Anda"
+                    android:inputType="textEmailAddress"
+                    android:textSize="14sp"
+                    android:textColor="#1B5E20"
+                    android:drawableStart="@android:drawable/ic_dialog_email"
+                    android:drawableTint="#4CAF50"
+                    android:drawablePadding="12dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Password Input Container -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/green_stroke"
+                app:hintTextColor="#4CAF50"
+                app:endIconMode="password_toggle"
+                app:endIconTint="#4CAF50"
+                app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtLogPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password Anda"
+                    android:inputType="textPassword"
+                    android:textSize="14sp"
+                    android:textColor="#1B5E20"
+                    android:drawableStart="@android:drawable/ic_lock_lock"
+                    android:drawableTint="#4CAF50"
+                    android:drawablePadding="12dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Tombol LOGIN dengan efek neon -->
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/neon_button_background"
+                android:text="LOGIN"
+                android:textColor="#FFFFFF"
+                android:textColorLink="#0E0C0F"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/passwordInputLayout" />
+
+            <!-- Teks Register -->
+            <TextView
+                android:id="@+id/txtRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jika pengguna baru, silahkan Register"
+                android:textColor="#4CAF50"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

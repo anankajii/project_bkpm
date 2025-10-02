@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="@android:color/white">
+
+    <!-- Judul "Register Akun" dengan font cursive -->
+    <TextView
+        android:id="@+id/txtTitleRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retrovolley"
+        android:textSize="32sp"
+        android:textStyle="italic"
+        android:textColor="@android:color/black"
+        android:fontFamily="cursive"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"/>
+
+    <!-- Subtitle Register -->
+    <TextView
+        android:id="@+id/txtSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buat Akun Baru"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/txtTitleRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Field Email -->
+    <EditText
+        android:id="@+id/edtRegEmail"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/txtSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Field Password -->
+    <EditText
+        android:id="@+id/edtRegPass"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/edtRegEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Field Konfirmasi Password -->
+    <EditText
+        android:id="@+id/edtRegConfirmPass"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:hint="Konfirmasi Password"
+        android:inputType="textPassword"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/edtRegPass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Tombol REGISTER -->
+    <Button
+        android:id="@+id/btnRegisterAction"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="REGISTER"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:backgroundTint="#6A1B9A"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/edtRegConfirmPass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Teks "Sudah punya akun?" -->
+    <TextView
+        android:id="@+id/txtBackLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sudah punya akun? "
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/btnRegisterAction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtLoginLink"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Link "Login" yang bisa diklik -->
+    <TextView
+        android:id="@+id/txtLoginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#2196F3"
+        android:textSize="14sp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="@id/txtBackLogin"
+        app:layout_constraintStart_toEndOf="@id/txtBackLogin"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

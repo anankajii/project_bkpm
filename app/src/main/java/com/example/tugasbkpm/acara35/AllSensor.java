@@ -46,7 +46,6 @@ public class AllSensor extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, resId);
         mediaPlayer.start();
     }
-
     private void stopAudio() {
         if (mediaPlayer != null) {
             mediaPlayer.release();

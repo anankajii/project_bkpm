@@ -9,8 +9,8 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-        // ✅ Tambahin Mapbox Maven
         maven { url = uri("https://api.mapbox.com/downloads/v2/releases/maven") }
+        maven { url = uri("https://jitpack.io") } // JitPack untuk Android Networking & DiagonalLayout
     }
 }
 
@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // ✅ Tambahin Mapbox Maven
+        maven { url = uri("https://jitpack.io") }
         maven { url = uri("https://api.mapbox.com/downloads/v2/releases/maven") }
     }
 }

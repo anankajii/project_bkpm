@@ -10,9 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.tugasbkpm.R;
-
 public class LoginActivity extends AppCompatActivity {
-
     private EditText mViewUser, mViewPassword;
 
     @Override
@@ -37,8 +35,6 @@ public class LoginActivity extends AppCompatActivity {
                 razia();
             }
         });
-
-        // Tombol Sign Up diklik (pindah ke RegisterActivity)
         findViewById(R.id.button_signUp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
